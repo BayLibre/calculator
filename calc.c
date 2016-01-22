@@ -2,6 +2,8 @@
 #include<math.h>
 #include<stdlib.h>
 
+/* Adding some description ..... */
+
 struct calc_func {
 	int (*compute)();
 	char key;
@@ -16,6 +18,16 @@ int add() {
 		res += atoi(cmd);
 	}
 	printf("Result is %d\n", res);
+}
+
+int multiply() {
+        int x, res=0;
+        char cmd[20];
+        printf("Enter numbers to multiply\n");
+        while( fgets(cmd, 20, stdin) && cmd[0] != '\n' ) {
+                res *= atoi(cmd);
+        }
+        printf("Result is %d\n", res);
 }
 
 int subtract() {
